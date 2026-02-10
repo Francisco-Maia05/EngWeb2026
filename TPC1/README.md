@@ -5,7 +5,8 @@
 * **Data:** 08/02/2026
 * **Autor:** Francisco Maia (A108962)
 * **Disciplina:** Engenharia Web
-* **Foto:** <img src="https://github.com/user-attachments/assets/29e1e9c8-3a2b-48c8-9c7c-fdf349fb0ad0" width="100">
+* **Foto:**
+<img src="https://github.com/user-attachments/assets/29e1e9c8-3a2b-48c8-9c7c-fdf349fb0ad0" width="150">
 
 ---
 
@@ -28,6 +29,7 @@ Resolução do primeiro TPC. Este primeiro trabalho consistiu na análise de um 
 
 ## Execução
 Para executar, basta correr o comando "python TPC1.py". É necessário vereficar que o ficheiro com o dataset está presente na pasta. É possível ver o resultado ao abrir o ficheiro index.html na pasta output gerada
+
 
 
 
