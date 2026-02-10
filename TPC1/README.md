@@ -24,3 +24,7 @@ Resolução do primeiro TPC. Este primeiro trabalho consistiu na análise de um 
 * **intervencoes/*.html**: Páginas de detalhe para cada tipo de intervenção.
 
 * **modelos/*.html**: Páginas por marca/modelo.
+
+## Lista de resultados
+Para executar, basta correr o comando "python TPC1.py". É necessário vereficar que o ficheiro com o dataset está presente na pasta. É possível ver o resultado ao abrir o ficheiro index.html na pasta output gerada
+
