@@ -14,7 +14,7 @@ Resolução do primeiro TPC. Este primeiro trabalho consistiu na análise de um 
 ---
 
 ## Lista de resultados
-* **TPC1.py**: Script principal..
+* **TPC1.py**: Script principal.
 * **dataset_reparacoes.json**: Ficheiro fonte com os dados.
 * **index.html**: Página principal.
 * **lista_reparacoes.html**: Índice completo de todas as intervenções realizadas.
@@ -22,4 +22,5 @@ Resolução do primeiro TPC. Este primeiro trabalho consistiu na análise de um 
 * **lista_modelos.html**: Índice de marcas e modelos que passaram pela oficina.
 * **reparacoes/*.html**: Páginas individuais com o detalhe de cada reparação.
 * **intervencoes/*.html**: Páginas de detalhe para cada tipo de intervenção.
+
 * **modelos/*.html**: Páginas por marca/modelo.
