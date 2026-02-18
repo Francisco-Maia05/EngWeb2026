@@ -17,9 +17,7 @@ O objetivo foi criar um servidor aplicacional que comunica com uma "base de dado
 
 ---
 
-## Execução
-Para colocar o sistema em funcionamento, é necessário garantir que as dependências foram instaladas (`npm install`) e seguir estes dois passos em terminais separados:
-
+## Execução: 
 1. **Instalar dependências**: npm install axios
 2. **Lançar a base de dados (JSON-Server)**: json-server --watch dataset_reparações.json
 3. **Lançar o servidor aplicacional**: node servidorTPC2.js
