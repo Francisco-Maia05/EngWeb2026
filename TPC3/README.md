@@ -12,6 +12,9 @@ Foram desenvolvidas rotas para:
 * **escola_musica.json**: Dataset com os registos de alunos, cursos e instrumentos.
 * **package.json**: Ficheiro de configuração com as dependências do trabalho (axios).
 ---
-## Execução
+## Execução: Para colocar o sistema em funcionamento, deve seguir estes passos:
 
-Para colocar o sistema em funcionamento, deve seguir estes passos:
+1. **Instalar dependências**: npm install axios
+2. **Lançar a base de dados (JSON-Server)**: json-server --watch dataset_reparações.json (Terminal 1)
+3. **Lançar o servidor aplicacional**: node servidorTPC2.js (Terminal 2)
+4. **Aceder ao Website**: Colocar no browser http://localhost:25001
