@@ -12,16 +12,16 @@ Este quarto trabalho prático consistiu na criação de um servidor aplicacional
 * **public/**: Pasta com recursos estáticos.
 ---
 ## Lista de Rotas Implementadas:
-| **GET** | `/` ou `/emd` | Página principal com a tabela de exames. |
-| **GET** | `/emd?sort=data` | Lista ordenada por data (decrescente). |
-| **GET** | `/emd?sort=nome` | Lista ordenada por nome (crescente). |
-| **GET** | `/emd/:id` | Ficha detalhada do exame médico. |
-| **GET** | `/emd/registo` | Formulário para criação de novo registo. |
-| **GET** | `/emd/editar/:id` | Formulário para edição de um registo. |
-| **GET** | `/emd/apagar/:id` | Remoção de um registo e redirecionamento. |
-| **GET** | `/emd/stats` | Estatísticas e distribuições dos dados. |
-| **POST** | `/emd` | Inserção de um novo registo na base de dados. |
-| **POST** | `/emd/:id` | Atualização de um registo existente. |
+* **GET `/` ou `/emd`**:  Página principal com a tabela de exames. 
+* **GET `/emd?sort=data`**: Lista ordenada por data (decrescente).
+* **GET `/emd?sort=nome`**:Lista ordenada por nome (crescente). 
+* **GET `/emd/:id`**: Ficha detalhada do exame médico. 
+* **GET `/emd/registo`**: Formulário para criação de novo registo. 
+* **GET `/emd/editar/:id`**: Formulário para edição de um registo. 
+* **GET `/emd/apagar/:id`**: Remoção de um registo e redirecionamento. 
+* **GET `/emd/stats`**: Estatísticas e distribuições dos dados. 
+* **POST `/emd`**: Inserção de um novo registo na base de dados. 
+* **POST `/emd/:id`**: Atualização de um registo existente.
 ---
 ## Execução: Para colocar o sistema em funcionamento, deve seguir estes passos:
 
