@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .w3-card-4
+    header.w3-container.w3-orange
+      h1 Lista de Géneros
+    .w3-container
+      table.w3-table-all
+        tr
+          th Género
+          th Total
+        each g in lista
+          tr
+            td: a(href="/generos/"+g.nome)= g.nome
+            td= g.nFilmes
+    footer.w3-container.w3-orange
+      a.w3-button(href="/") Voltar
