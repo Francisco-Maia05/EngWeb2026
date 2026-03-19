@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .w3-container.w3-red.w3-margin
+    h1 ❌ Erro
+    p= message
+    if error
+      pre.w3-code.w3-border= error
+    a.w3-button.w3-white(href="/") Voltar ao Início

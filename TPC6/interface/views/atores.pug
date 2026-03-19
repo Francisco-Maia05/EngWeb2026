@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .w3-card-4.w3-margin
+    header.w3-container.w3-indigo
+      h2 🎭 Lista de Atores
+    .w3-container
+      table.w3-table-all.w3-hoverable.w3-margin-top.w3-margin-bottom
+        tr.w3-light-grey
+          th Nome do Ator
+          th Nº de Filmes no Dataset
+        each a in atores
+          tr(onclick=`window.location='/atores/${a.nome}'` style="cursor:pointer")
+            td= a.nome
+            td
+              span.w3-badge.w3-indigo= a.numFilmes

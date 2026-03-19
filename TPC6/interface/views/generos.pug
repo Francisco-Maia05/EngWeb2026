@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .w3-card-4.w3-margin
+    header.w3-container.w3-deep-orange
+      h2 🍿 Géneros Cinematográficos
+    .w3-container
+      table.w3-table-all.w3-hoverable.w3-margin-top.w3-margin-bottom
+        tr.w3-light-grey
+          th Género
+          th Total de Filmes
+        each g in generos
+          tr
+            td.w3-large #[b= g.designacao]
+            td
+              span.w3-tag.w3-round.w3-black= g.numFilmes
+              
+    footer.w3-container.w3-deep-orange
+      a.w3-button.w3-black.w3-margin(href="/filmes") ⬅️ Início

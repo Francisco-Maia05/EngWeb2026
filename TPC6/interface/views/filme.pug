@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .w3-card-4.w3-margin
+    header.w3-container.w3-teal
+      h2= filme.title
+    .w3-container.w3-padding-16
+      p #[b Ano de Lançamento:] #{filme.year}
+      
+      h4 🎭 Elenco
+      ul.w3-ul.w3-border.w3-white
+        each ator in filme.cast
+          li
+            a(href=`/atores/${ator}`) #{ator}
+            
+      h4 🍿 Géneros
+      p
+        each gen in filme.genres
+          span.w3-tag.w3-orange.w3-margin-right= gen
+
+    footer.w3-container.w3-teal
+      a.w3-button.w3-black.w3-margin(href="/filmes") ⬅️ Voltar
