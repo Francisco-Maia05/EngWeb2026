@@ -1,0 +1,32 @@
+services:
+  # Serviço da API (Dados)
+  api:
+    build: 
+      context: ./api_dados
+      dockerfile: Dockerfile
+    container_name: api_cinema
+    environment:
+      - MONGO_URL=mongodb://mongoEW:27017/cinema
+    networks:
+      - cinema-network
+
+  # Serviço da Interface (Pug/Express)
+  interface:
+    build:
+      context: ./interface
+      dockerfile: Dockerfile.interface
+    container_name: interface_cinema
+    ports:
+      - "7780:7780"
+    environment:
+      - API_URL=http://api:7779
+    depends_on:
+      - api
+    networks:
+      - cinema-network
+
+# Definir a rede como "externa" para que o Docker não tente criar uma nova,
+# mas sim use a que criaste para o mongoEW.
+networks:
+  cinema-network:
+    driver: bridge
