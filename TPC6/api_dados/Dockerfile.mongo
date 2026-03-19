@@ -1,0 +1,8 @@
+FROM mongo:latest
+
+# Copia o dataset para dentro do contentor
+COPY cinema.json /cinema.json
+
+# O MongoDB executa automaticamente qualquer script .sh ou .js dentro desta pasta no arranque
+# Vamos criar um comando para importar os dados para a coleção 'filmes'
+RUN echo "mongoimport --db cinema --collection filmes --file /cinema.json --jsonArray" > /docker-entrypoint-initdb.d/import.sh
