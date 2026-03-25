@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  a.back(href='/') ← Voltar à página principal
+
+  h2 Marca: #{marca}
+
+  .card
+    h3 Modelos intervencionados
+    ul
+      each m in modelos
+        li #{m}
+
+  h3 Reparações desta marca (#{reparacoes.length} registos)
+
+  table
+    thead
+      tr
+        th ID
+        th Data
+        th Cliente
+        th Matrícula
+        th Marca
+        th Nº Intervenções
+    tbody
+      each r in reparacoes
+        tr
+          td
+            a(href=`/${r._id}`) #{r._id}
+          td #{r.data}
+          td #{r.nome}
+          td #{r.viatura.matricula}
+          td #{r.viatura.marca}
+          td #{r.nr_intervencoes}

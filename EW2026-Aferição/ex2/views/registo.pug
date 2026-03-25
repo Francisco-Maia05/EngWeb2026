@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  a.back(href='/') ← Voltar à página principal
+
+  h2 Detalhe da Reparação
+
+  .card
+    .field
+      span.label ID:
+      span #{reparacao._id}
+    .field
+      span.label Cliente:
+      span #{reparacao.nome}
+    .field
+      span.label NIF:
+      span #{reparacao.nif}
+    .field
+      span.label Data:
+      span #{reparacao.data}
+    .field
+      span.label Marca:
+      span
+        a(href=`/${reparacao.viatura.marca}`) #{reparacao.viatura.marca}
+    .field
+      span.label Modelo:
+      span #{reparacao.viatura.modelo}
+    .field
+      span.label Matrícula:
+      span #{reparacao.viatura.matricula}
+    .field
+      span.label Nº Intervenções:
+      span #{reparacao.nr_intervencoes}
+
+  h2 Intervenções Realizadas
+
+  table
+    thead
+      tr
+        th Código
+        th Nome
+        th Descrição
+    tbody
+      each i in reparacao.intervencoes
+        tr
+          td #{i.codigo}
+          td #{i.nome}
+          td #{i.descricao}

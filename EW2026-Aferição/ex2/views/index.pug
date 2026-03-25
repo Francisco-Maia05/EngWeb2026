@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h2 Lista de Reparações
+  p Total de registos: #{reparacoes.length}
+  table
+    thead
+      tr
+        th ID
+        th Data
+        th Cliente
+        th Matrícula
+        th Marca
+        th Nº Intervenções
+    tbody
+      each r in reparacoes
+        tr
+          td
+            a(href=`/${r._id}`) #{r._id}
+          td #{r.data}
+          td #{r.nome}
+          td #{r.viatura.matricula}
+          td
+            a(href=`/${r.viatura.marca}`) #{r.viatura.marca}
+          td #{r.nr_intervencoes}
