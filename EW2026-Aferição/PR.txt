@@ -1,0 +1,52 @@
+Prova de aferição Engenharia Web:
+
+1: Persistência de Dados
+
+A persistência de dados foi feita com MongoDB. O dataset fornecido (dataset_reparacoes.json)
+foi importado numa base de dados chamada "autoRepair", na coleção "repairs", utilizando o
+comando mongoimport. 
+
+O MongoDB corre no container Docker chamado "mongoEW".
+
+## Respostas às Queries (queries.txt)
+
+As queries MongoDB desenvolvidas para responder às questões do exercício 1.2 encontram-se
+no ficheiro queries.txt dentro da pasta ex1.
+
+## Execução
+
+### Pré-requisitos
+- Docker instalado
+- Container MongoDB "mongoEW" a correr
+
+Na pasta ex1, executar: npm install express mongoose
+Na pasta ex2, executar: npm install express pug axios
+
+Na raiz do repositório, correr:
+
+    docker-compose up --build
+
+A API ficará disponível em:        http://localhost:16025
+A Interface ficará disponível em:  http://localhost:16026
+
+
+Caso queira executar sem o Docker, basta:
+- Na diretoria ex1, executar node app.js → Corre em http://localhost:16025
+- Na diretoria ex2, executar node interface.js → Corre em http://localhost:16026
+
+## Rotas da API (porta 16025)
+
+GET    /repairs                  → Lista todos os registos
+GET    /repairs/:id              → Registo por ID
+GET    /repairs?ano=YYYY         → Filtro por ano
+GET    /repairs?marca=VRUM       → Filtro por marca
+GET    /repairs/matriculas       → Lista de matrículas únicas
+GET    /repairs/interv           → Lista de intervenções únicas
+POST   /repairs                  → Criar novo registo
+DELETE /repairs/:id              → Eliminar registo por ID
+
+## Páginas da Interface (porta 16026)
+
+http://localhost:16026            → Página principal com tabela de reparações
+http://localhost:16026/:id        → Página de detalhe de um registo
+http://localhost:16026/:marca     → Página de uma marca com modelos e reparações
