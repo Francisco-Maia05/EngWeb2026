@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+
+  api:
+    build:
+      context: ./ex1
+      dockerfile: Dockerfile.api
+    container_name: ew2026-api
+    ports:
+      - "16025:16025"
+    environment:
+      - MONGO_URI=mongodb://172.17.0.2:27017/autoRepair
+    networks:
+      - ew2026-network
+
+  interface:
+    build:
+      context: ./ex2
+      dockerfile: Dockerfile.interface
+    container_name: ew2026-interface
+    ports:
+      - "16026:16026"
+    environment:
+      - API_URL=http://ew2026-api:16025
+    depends_on:
+      - api
+    networks:
+      - ew2026-network
+
+networks:
+  ew2026-network:
+    driver: bridge
