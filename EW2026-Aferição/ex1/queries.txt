@@ -1,0 +1,64 @@
+// queries.txt — Queries MongoDB para a coleção repairs (db: autoRepair)
+// Executar no mongosh: use autoRepair
+
+// ---------------------------------------------------------------
+// 1. Quantos automóveis foram reparados?
+// ---------------------------------------------------------------
+db.repairs.countDocuments()
+
+// ---------------------------------------------------------------
+// 2. Quantos automóveis da marca "Cadillac" foram reparados?
+// ---------------------------------------------------------------
+db.repairs.countDocuments({ "viatura.marca": "Cadillac" })
+
+// ---------------------------------------------------------------
+// 3. Que marcas de automóveis já apareceram na oficina?
+//    (ordenadas alfabeticamente, sem repetições)
+// ---------------------------------------------------------------
+db.repairs.distinct("viatura.marca").sort()
+
+// ---------------------------------------------------------------
+// 4. Distribuição por tipo de reparação
+//    (quantas ocorrências de cada tipo de intervenção)
+// ---------------------------------------------------------------
+db.repairs.aggregate([
+  { $unwind: "$intervencoes" },
+  {
+    $group: {
+      _id: {
+        codigo: "$intervencoes.codigo",
+        nome: "$intervencoes.nome"
+      },
+      total: { $sum: 1 }
+    }
+  },
+  { $sort: { "_id.codigo": 1 } },
+  {
+    $project: {
+      _id: 0,
+      codigo: "$_id.codigo",
+      nome: "$_id.nome",
+      total: 1
+    }
+  }
+])
+
+// ---------------------------------------------------------------
+// 5. Distribuição do número de clientes por ano
+// ---------------------------------------------------------------
+db.repairs.aggregate([
+  {
+    $group: {
+      _id: { $substr: ["$data", 0, 4] },
+      total_clientes: { $sum: 1 }
+    }
+  },
+  { $sort: { _id: 1 } },
+  {
+    $project: {
+      _id: 0,
+      ano: "$_id",
+      total_clientes: 1
+    }
+  }
+])
